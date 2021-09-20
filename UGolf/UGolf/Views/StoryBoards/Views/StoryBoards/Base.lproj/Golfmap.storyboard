@@ -1,59 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Wa-xy-tYy">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="E4y-Ei-Xq1">
-            <objects>
-                <tableViewController id="Jxe-5e-Lr3" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iyn-VZ-XIa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="6Bi-0i-aws">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6Bi-0i-aws" id="MT8-rY-fpJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Jxe-5e-Lr3" id="qEx-Gl-NmI"/>
-                            <outlet property="delegate" destination="Jxe-5e-Lr3" id="P9H-UC-vs9"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="qAK-FH-QdX"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bqa-ZN-zlZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-116" y="-173"/>
-        </scene>
-        <!--Item-->
+        <!--Courses-->
         <scene sceneID="eu3-UW-K1l">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-D1-7Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="3Wa-xy-tYy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oWg-Jr-Zma"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="mappin.and.ellipse" catalog="system" id="oWg-Jr-Zma"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NqX-LZ-1c2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Jxe-5e-Lr3" kind="relationship" relationship="rootViewController" id="Bcv-zk-kbm"/>
+                        <segue destination="0Sv-fQ-KqR" kind="relationship" relationship="rootViewController" id="yYq-zK-S9U"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D5H-D1-7Rl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-852" y="-173"/>
         </scene>
+        <!--Your courses-->
+        <scene sceneID="UBd-OY-lfl">
+            <objects>
+                <viewController id="0Sv-fQ-KqR" customClass="MapViewController" customModule="UGolf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Dc-3S-vnv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-nH-NZN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0Sv-fQ-KqR" id="OE4-V7-UFf"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kBw-G2-ooV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qyl-nH-NZN" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="top" id="0ez-Rf-gaV"/>
+                            <constraint firstItem="kBw-G2-ooV" firstAttribute="bottom" secondItem="qyl-nH-NZN" secondAttribute="bottom" id="0hb-Nf-iV7"/>
+                            <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="qyl-nH-NZN" secondAttribute="trailing" id="AjY-m3-Rin"/>
+                            <constraint firstItem="qyl-nH-NZN" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="top" id="BhS-X6-sgm"/>
+                            <constraint firstItem="qyl-nH-NZN" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="MxW-VS-T2m"/>
+                            <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="qyl-nH-NZN" secondAttribute="trailing" id="Vs8-Q5-Lbt"/>
+                            <constraint firstItem="qyl-nH-NZN" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="lQB-bO-SYY"/>
+                            <constraint firstItem="kBw-G2-ooV" firstAttribute="bottom" secondItem="qyl-nH-NZN" secondAttribute="bottom" id="yea-4b-J6l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your courses" id="8g8-1q-3p8"/>
+                    <connections>
+                        <outlet property="mapView" destination="qyl-nH-NZN" id="xBe-XT-2Nc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NBF-ug-Drx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3" y="-173"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -22,6 +22,8 @@
 		5B8EC05C26F8ED2400CE160D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05A26F8ED2400CE160D /* Game.storyboard */; };
 		5B8EC05F26F8EE0400CE160D /* Golfmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */; };
 		5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */; };
+		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
+		5B8EC06726F8F6AD00CE160D /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06626F8F6AD00CE160D /* LocationService.swift */; };
 		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +46,8 @@
 		5B8EC05B26F8ED2400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		5B8EC05E26F8EE0400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Golfmap.storyboard; sourceTree = "<group>"; };
 		5B8EC06126F8EE6C00CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Messaging.storyboard; sourceTree = "<group>"; };
+		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5B8EC06626F8F6AD00CE160D /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
 		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */,
+				5B8EC06526F8F67A00CE160D /* Mapkit Services */,
 				5754A92426F8DF6A004E8580 /* Controllers */,
 				5754A92826F8DFFF004E8580 /* Views */,
 				5754A92726F8DFDE004E8580 /* Resources */,
@@ -101,6 +106,7 @@
 		5754A92526F8DF79004E8580 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5B8EC06326F8F45800CE160D /* MapViewController.swift */,
 				5754A92626F8DF90004E8580 /* LoginViewControllers */,
 				5748DB8426F8F3CC00DCA26C /* HomeViewController.swift */,
 			);
@@ -147,6 +153,14 @@
 				5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		5B8EC06526F8F67A00CE160D /* Mapkit Services */ = {
+			isa = PBXGroup;
+			children = (
+				5B8EC06626F8F6AD00CE160D /* LocationService.swift */,
+			);
+			path = "Mapkit Services";
 			sourceTree = "<group>";
 		};
 		C8341DB99F49E441265EACED /* Pods */ = {
@@ -285,12 +299,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				
+			
+		
+				5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */,
+				5B8EC06726F8F6AD00CE160D /* LocationService.swift in Sources */,
 				5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */,
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
+
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SB3Q7W7XN7;
+				DEVELOPMENT_TEAM = D5YK8XAHMK;
 				INFOPLIST_FILE = UGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -484,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SB3Q7W7XN7;
+				DEVELOPMENT_TEAM = D5YK8XAHMK;
 				INFOPLIST_FILE = UGolf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
