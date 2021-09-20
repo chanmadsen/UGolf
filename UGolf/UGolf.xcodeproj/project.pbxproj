@@ -14,8 +14,11 @@
 		5754A91726F8DB7C004E8580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91526F8DB7C004E8580 /* Main.storyboard */; };
 		5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91826F8DB7E004E8580 /* Assets.xcassets */; };
 		5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */; };
-		5754A92B26F8E01C004E8580 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754A92A26F8E01C004E8580 /* TableViewCell.swift */; };
 		5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */; };
+		5B8E6D9326F8E8D200A37699 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E6D9226F8E8D200A37699 /* Home.storyboard */; };
+		5B8EC05C26F8ED2400CE160D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05A26F8ED2400CE160D /* Game.storyboard */; };
+		5B8EC05F26F8EE0400CE160D /* Golfmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */; };
+		5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */; };
 		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,8 +33,11 @@
 		5754A91826F8DB7E004E8580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5754A91B26F8DB7E004E8580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5754A91D26F8DB7E004E8580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5754A92A26F8E01C004E8580 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../../../../../TableViewCell.swift; sourceTree = "<group>"; };
 		5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B8E6D9226F8E8D200A37699 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		5B8EC05B26F8ED2400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Game.storyboard; sourceTree = "<group>"; };
+		5B8EC05E26F8EE0400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Golfmap.storyboard; sourceTree = "<group>"; };
+		5B8EC06126F8EE6C00CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Messaging.storyboard; sourceTree = "<group>"; };
 		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
 		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,20 +76,12 @@
 			isa = PBXGroup;
 			children = (
 				5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */,
-				5754A92326F8DF3E004E8580 /* Model */,
 				5754A92426F8DF6A004E8580 /* Controllers */,
 				5754A92826F8DFFF004E8580 /* Views */,
 				5754A92726F8DFDE004E8580 /* Resources */,
 				5754A91D26F8DB7E004E8580 /* Info.plist */,
 			);
 			path = UGolf;
-			sourceTree = "<group>";
-		};
-		5754A92326F8DF3E004E8580 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5754A92426F8DF6A004E8580 /* Controllers */ = {
@@ -125,23 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				5754A92C26F8E020004E8580 /* StoryBoards */,
-				5754A92926F8E00A004E8580 /* CustomCells */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		5754A92926F8E00A004E8580 /* CustomCells */ = {
-			isa = PBXGroup;
-			children = (
-				5754A92A26F8E01C004E8580 /* TableViewCell.swift */,
-			);
-			path = CustomCells;
 			sourceTree = "<group>";
 		};
 		5754A92C26F8E020004E8580 /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
 				5754A91526F8DB7C004E8580 /* Main.storyboard */,
+				5B8E6D9226F8E8D200A37699 /* Home.storyboard */,
+				5B8EC05A26F8ED2400CE160D /* Game.storyboard */,
+				5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */,
+				5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */,
 				5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
@@ -223,10 +216,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8EC05C26F8ED2400CE160D /* Game.storyboard in Resources */,
+				5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */,
 				5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */,
+				5B8E6D9326F8E8D200A37699 /* Home.storyboard in Resources */,
 				5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */,
 				5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */,
 				5754A91726F8DB7C004E8580 /* Main.storyboard in Resources */,
+				5B8EC05F26F8EE0400CE160D /* Golfmap.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5754A92B26F8E01C004E8580 /* TableViewCell.swift in Sources */,
+
+
+				
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
+
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
@@ -304,6 +304,30 @@
 				5754A91B26F8DB7E004E8580 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5B8EC05A26F8ED2400CE160D /* Game.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B8EC05B26F8ED2400CE160D /* Base */,
+			);
+			name = Game.storyboard;
+			sourceTree = "<group>";
+		};
+		5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B8EC05E26F8EE0400CE160D /* Base */,
+			);
+			name = Golfmap.storyboard;
+			sourceTree = "<group>";
+		};
+		5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B8EC06126F8EE6C00CE160D /* Base */,
+			);
+			name = Messaging.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
