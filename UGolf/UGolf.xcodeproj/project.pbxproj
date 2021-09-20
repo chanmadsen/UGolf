@@ -14,9 +14,12 @@
 		5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91826F8DB7E004E8580 /* Assets.xcassets */; };
 		5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */; };
 		5754A92B26F8E01C004E8580 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754A92A26F8E01C004E8580 /* TableViewCell.swift */; };
+		5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */; };
+		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5754A90C26F8DB7C004E8580 /* UGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5754A90F26F8DB7C004E8580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5754A91126F8DB7C004E8580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +29,9 @@
 		5754A91B26F8DB7E004E8580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5754A91D26F8DB7E004E8580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5754A92A26F8E01C004E8580 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../../../../../TableViewCell.swift; sourceTree = "<group>"; };
+		5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
+		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +51,8 @@
 			children = (
 				5754A90E26F8DB7C004E8580 /* UGolf */,
 				5754A90D26F8DB7C004E8580 /* Products */,
+				C8341DB99F49E441265EACED /* Pods */,
+				DEBAD48A4F8098F016577BC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +67,7 @@
 		5754A90E26F8DB7C004E8580 /* UGolf */ = {
 			isa = PBXGroup;
 			children = (
+				5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */,
 				5754A92326F8DF3E004E8580 /* Model */,
 				5754A92426F8DF6A004E8580 /* Controllers */,
 				5754A92826F8DFFF004E8580 /* Views */,
@@ -134,6 +144,24 @@
 			path = StoryBoards;
 			sourceTree = "<group>";
 		};
+		C8341DB99F49E441265EACED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */,
+				A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DEBAD48A4F8098F016577BC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +169,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5754A92026F8DB7E004E8580 /* Build configuration list for PBXNativeTarget "UGolf" */;
 			buildPhases = (
+				FC708D6454E09A1396B5E16D /* [CP] Check Pods Manifest.lock */,
 				5754A90826F8DB7C004E8580 /* Sources */,
 				5754A90926F8DB7C004E8580 /* Frameworks */,
 				5754A90A26F8DB7C004E8580 /* Resources */,
+				40C6A049359D4A62EC60D924 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */,
 				5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */,
 				5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */,
 				5754A91726F8DB7C004E8580 /* Main.storyboard in Resources */,
@@ -198,6 +229,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40C6A049359D4A62EC60D924 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UGolf/Pods-UGolf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UGolf/Pods-UGolf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UGolf/Pods-UGolf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC708D6454E09A1396B5E16D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UGolf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5754A90826F8DB7C004E8580 /* Sources */ = {
@@ -351,6 +424,7 @@
 		};
 		5754A92126F8DB7E004E8580 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,6 +444,7 @@
 		};
 		5754A92226F8DB7E004E8580 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
