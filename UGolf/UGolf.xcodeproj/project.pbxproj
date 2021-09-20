@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */; };
+		5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */; };
 		5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754A90F26F8DB7C004E8580 /* AppDelegate.swift */; };
 		5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754A91126F8DB7C004E8580 /* SceneDelegate.swift */; };
-		5754A91426F8DB7C004E8580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754A91326F8DB7C004E8580 /* ViewController.swift */; };
 		5754A91726F8DB7C004E8580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91526F8DB7C004E8580 /* Main.storyboard */; };
 		5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91826F8DB7E004E8580 /* Assets.xcassets */; };
 		5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */; };
@@ -23,10 +24,11 @@
 
 /* Begin PBXFileReference section */
 		49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5754A90C26F8DB7C004E8580 /* UGolf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UGolf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5754A90F26F8DB7C004E8580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5754A91126F8DB7C004E8580 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5754A91326F8DB7C004E8580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5754A91626F8DB7C004E8580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5754A91826F8DB7E004E8580 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5754A91B26F8DB7E004E8580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,7 +103,8 @@
 		5754A92626F8DF90004E8580 /* LoginViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5754A91326F8DB7C004E8580 /* ViewController.swift */,
+				5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */,
+				5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */,
 			);
 			path = LoginViewControllers;
 			sourceTree = "<group>";
@@ -273,8 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5754A91426F8DB7C004E8580 /* ViewController.swift in Sources */,
+
+
+				
+				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
+
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
+				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
