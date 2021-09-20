@@ -116,7 +116,7 @@ class LoginViewController: UIViewController {
         
         let size = scrollView.width/3
         imageView.frame = CGRect(x: (scrollView.width-size)/2,
-                                 y: 20,
+                                 y: 30,
                                  width: size,
                                  height: size)
         emailField.frame = CGRect(x: 30,
@@ -128,7 +128,7 @@ class LoginViewController: UIViewController {
                                      width: scrollView.width-60,
                                      height: 52)
         loginButton.frame = CGRect(x: 30,
-                                   y: passwordField.bottom+10,
+                                   y: passwordField.bottom+20,
                                    width: scrollView.width-60,
                                    height: 52)
         facebookLoginButton.frame = CGRect(x: 30,
