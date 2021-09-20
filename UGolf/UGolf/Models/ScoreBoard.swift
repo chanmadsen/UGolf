@@ -7,11 +7,4 @@
 
 import Foundation
 
-class ScoreBoard {
-    let nineHole : [Int]
-    let eighteenHole : [Int]
-    var score : Int
-    let isNineHoleGame : Bool
-    
-    init(nineHole : [Int], eighteenHole : [Int], score : Int, isNineHoleGame : Bool = true)
-}
+

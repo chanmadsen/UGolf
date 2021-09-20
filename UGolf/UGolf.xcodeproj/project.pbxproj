@@ -22,12 +22,9 @@
 		5B8EC05C26F8ED2400CE160D /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05A26F8ED2400CE160D /* Game.storyboard */; };
 		5B8EC05F26F8EE0400CE160D /* Golfmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */; };
 		5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */; };
-
+		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
 		76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6226F8F083009DC073 /* ScoreBoard.swift */; };
 		76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */; };
-
-		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
-
 		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,12 +47,9 @@
 		5B8EC05B26F8ED2400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Game.storyboard; sourceTree = "<group>"; };
 		5B8EC05E26F8EE0400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Golfmap.storyboard; sourceTree = "<group>"; };
 		5B8EC06126F8EE6C00CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Messaging.storyboard; sourceTree = "<group>"; };
-
+		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		76AD3C6226F8F083009DC073 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
-
-		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
-
 		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
 		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,9 +108,10 @@
 		5754A92526F8DF79004E8580 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5B8EC06326F8F45800CE160D /* MapViewController.swift */,
 				5754A92626F8DF90004E8580 /* LoginViewControllers */,
 				5748DB8426F8F3CC00DCA26C /* HomeViewController.swift */,
+				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
+				5B8EC06326F8F45800CE160D /* MapViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -126,7 +121,6 @@
 			children = (
 				5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */,
 				5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */,
-				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
 			);
 			path = LoginViewControllers;
 			sourceTree = "<group>";
@@ -308,20 +302,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */,
 				5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */,
-
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
 				76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
-
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
-
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
-
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
