@@ -18,6 +18,9 @@
 		5754A91926F8DB7E004E8580 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91826F8DB7E004E8580 /* Assets.xcassets */; };
 		5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */; };
 		5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */; };
+		57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055D26FA9F5200D4364A /* ChatViewController.swift */; };
+		57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */; };
+		57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC056126FA9F8400D4364A /* NewConversationViewController.swift */; };
 		5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA85926FA41FA00D2189A /* POI.swift */; };
 		5B5BA85D26FA49D500D2189A /* MKPlacemark+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA85C26FA49D500D2189A /* MKPlacemark+Extension.swift */; };
 		5B8E6D9326F8E8D200A37699 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E6D9226F8E8D200A37699 /* Home.storyboard */; };
@@ -45,6 +48,9 @@
 		5754A91B26F8DB7E004E8580 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5754A91D26F8DB7E004E8580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		57FC055D26FA9F5200D4364A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
+		57FC056126FA9F8400D4364A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		5B5BA85926FA41FA00D2189A /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
 		5B5BA85C26FA49D500D2189A /* MKPlacemark+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPlacemark+Extension.swift"; sourceTree = "<group>"; };
 		5B8E6D9226F8E8D200A37699 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				5754A92626F8DF90004E8580 /* LoginViewControllers */,
+				57FC055C26FA9F0E00D4364A /* ChatViewController */,
 				5748DB8426F8F3CC00DCA26C /* HomeViewController.swift */,
 				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
 				5B8EC06326F8F45800CE160D /* MapViewController.swift */,
@@ -161,6 +168,16 @@
 				5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		57FC055C26FA9F0E00D4364A /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */,
+				57FC055D26FA9F5200D4364A /* ChatViewController.swift */,
+				57FC056126FA9F8400D4364A /* NewConversationViewController.swift */,
+			);
+			path = ChatViewController;
 			sourceTree = "<group>";
 		};
 		5B5BA85B26FA49B700D2189A /* Extensions */ = {
@@ -319,12 +336,15 @@
 				5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */,
 				5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */,
 				5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */,
+				57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */,
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
 				76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */,
 				5B5BA85D26FA49D500D2189A /* MKPlacemark+Extension.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
+				57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */,
+				57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
