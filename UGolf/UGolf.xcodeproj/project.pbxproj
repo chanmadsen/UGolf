@@ -25,6 +25,8 @@
 		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
 		76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6226F8F083009DC073 /* ScoreBoard.swift */; };
 		76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */; };
+		76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */; };
+		76AD3C6B26FA482E009DC073 /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */; };
 		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		76AD3C6226F8F083009DC073 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
+		76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardController.swift; sourceTree = "<group>"; };
+		76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
 		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
 		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,7 @@
 		5754A92426F8DF6A004E8580 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76AD3C6626FA44B8009DC073 /* Model Controllers */,
 				5754A92526F8DF79004E8580 /* View Controllers */,
 			);
 			path = Controllers;
@@ -108,9 +113,9 @@
 		5754A92526F8DF79004E8580 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				76AD3C6926FA47EC009DC073 /* GameViewControllers */,
 				5754A92626F8DF90004E8580 /* LoginViewControllers */,
 				5748DB8426F8F3CC00DCA26C /* HomeViewController.swift */,
-				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
 				5B8EC06326F8F45800CE160D /* MapViewController.swift */,
 			);
 			path = "View Controllers";
@@ -164,6 +169,23 @@
 				76AD3C6226F8F083009DC073 /* ScoreBoard.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		76AD3C6626FA44B8009DC073 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		76AD3C6926FA47EC009DC073 /* GameViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
+				76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */,
+			);
+			path = GameViewControllers;
 			sourceTree = "<group>";
 		};
 		C8341DB99F49E441265EACED /* Pods */ = {
@@ -308,9 +330,11 @@
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
 				76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
+				76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */,
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
+				76AD3C6B26FA482E009DC073 /* GameSetupViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
