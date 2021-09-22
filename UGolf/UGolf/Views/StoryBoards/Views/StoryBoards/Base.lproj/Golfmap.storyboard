@@ -80,7 +80,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVS-Kw-94d">
-                                <rect key="frame" x="0.0" y="196" width="414" height="717"/>
+                                <rect key="frame" x="0.0" y="896" width="414" height="717"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luu-Vh-Ryj" userLabel="Close">
                                         <rect key="frame" x="380" y="4" width="30" height="30"/>
@@ -143,7 +143,7 @@
                                         </constraints>
                                     </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-dH-3U9">
-                                        <rect key="frame" x="0.0" y="154" width="414" height="563"/>
+                                        <rect key="frame" x="0.0" y="154" width="414" height="513"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" textLabel="0ho-Br-iaX" detailTextLabel="6bu-PE-nQo" style="IBUITableViewCellStyleSubtitle" id="ad8-a2-DzT">
@@ -177,13 +177,13 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="2pD-dH-3U9" secondAttribute="trailing" id="2Ag-m4-6o5"/>
                                     <constraint firstItem="ntw-nM-rSd" firstAttribute="leading" secondItem="BBP-xp-9Q6" secondAttribute="leading" id="2Sj-rx-rXw"/>
                                     <constraint firstItem="ntw-nM-rSd" firstAttribute="top" secondItem="BBP-xp-9Q6" secondAttribute="bottom" constant="16" id="GlG-pO-tMD"/>
                                     <constraint firstItem="BBP-xp-9Q6" firstAttribute="leading" secondItem="cVS-Kw-94d" secondAttribute="leading" constant="16" id="Sla-Rs-j3P"/>
-                                    <constraint firstAttribute="bottom" secondItem="2pD-dH-3U9" secondAttribute="bottom" id="UWl-OT-5o9"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="2pD-dH-3U9" secondAttribute="bottom" constant="8" id="UWl-OT-5o9"/>
                                     <constraint firstItem="BBP-xp-9Q6" firstAttribute="top" secondItem="cVS-Kw-94d" secondAttribute="top" constant="24" id="Yhz-Kd-Wz8"/>
                                     <constraint firstItem="luu-Vh-Ryj" firstAttribute="top" secondItem="cVS-Kw-94d" secondAttribute="top" constant="4" id="bSf-Np-kxn"/>
                                     <constraint firstAttribute="trailing" secondItem="luu-Vh-Ryj" secondAttribute="trailing" constant="4" id="bod-ff-vQB"/>
@@ -203,7 +203,7 @@
                             <constraint firstItem="qyl-nH-NZN" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="top" id="BhS-X6-sgm"/>
                             <constraint firstItem="qyl-nH-NZN" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="MxW-VS-T2m"/>
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="qyl-nH-NZN" secondAttribute="trailing" id="Vs8-Q5-Lbt"/>
-                            <constraint firstItem="cVS-Kw-94d" firstAttribute="top" secondItem="7Dc-3S-vnv" secondAttribute="bottom" constant="-700" id="bFt-67-zAC"/>
+                            <constraint firstItem="cVS-Kw-94d" firstAttribute="top" secondItem="7Dc-3S-vnv" secondAttribute="bottom" id="bFt-67-zAC"/>
                             <constraint firstItem="cVS-Kw-94d" firstAttribute="height" secondItem="7Dc-3S-vnv" secondAttribute="height" multiplier="0.8" id="eSS-u2-61M"/>
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="Jcj-my-VrH" secondAttribute="trailing" constant="8" id="h2e-pt-dou"/>
                             <constraint firstItem="cVS-Kw-94d" firstAttribute="trailing" secondItem="kBw-G2-ooV" secondAttribute="trailing" id="h7U-8q-i2s"/>
