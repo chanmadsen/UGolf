@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
     
     private let firstNameField: UITextField = {
         let field = UITextField()
-        field.autocapitalizationType = .none
+        field.autocapitalizationType = .words
         field.autocorrectionType = .no
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12
@@ -78,7 +78,7 @@ class RegisterViewController: UIViewController {
     
     private let lastNameField: UITextField = {
         let field = UITextField()
-        field.autocapitalizationType = .none
+        field.autocapitalizationType = .words
         field.autocorrectionType = .no
         field.returnKeyType = .continue
         field.layer.cornerRadius = 12

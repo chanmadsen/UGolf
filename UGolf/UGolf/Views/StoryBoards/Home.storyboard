@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luL-MD-2ga">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="luL-MD-2ga">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,8 +14,8 @@
             <objects>
                 <navigationController id="luL-MD-2ga" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="vpw-PP-rDQ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jUB-L5-hfS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jUB-L5-hfS">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -25,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="46" y="-1136"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Profile-->
         <scene sceneID="iEf-Rr-GlJ">
             <objects>
                 <viewController id="hwq-yc-Fud" customClass="HomeViewController" customModule="UGolf" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +35,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TSV-iF-5au">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -47,7 +48,7 @@
                             <constraint firstItem="l3h-GW-vrb" firstAttribute="trailing" secondItem="TSV-iF-5au" secondAttribute="trailing" id="QTR-Sc-ydy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hyG-1F-Wgh"/>
+                    <navigationItem key="navigationItem" title="Profile" id="hyG-1F-Wgh"/>
                     <connections>
                         <outlet property="tableView" destination="TSV-iF-5au" id="uGY-Hi-cVD"/>
                     </connections>
