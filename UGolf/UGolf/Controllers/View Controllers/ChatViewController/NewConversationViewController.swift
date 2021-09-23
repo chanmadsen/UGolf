@@ -11,6 +11,8 @@ import RealmSwift
 
 class NewConversationViewController: UIViewController {
     
+    public var completion: (([String: String]) -> (Void))?
+    
     private let spinner = JGProgressHUD(style: .dark)
     
     private var users = [[String: String]]()
@@ -92,14 +94,18 @@ extension NewConversationViewController:UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //Start conversation
+        let targetUserData = results[indexPath.row]
+        
+        dismiss(animated: true, completion: {[weak self] in
+            self?.completion?(targetUserData)
+        })
     }
-    
 }
 
 extension NewConversationViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: " ").isEmpty else { return }
+        guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else { return }
         
         searchBar.resignFirstResponder()
         
