@@ -19,6 +19,7 @@
 		5754A91C26F8DB7E004E8580 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */; };
 		5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */; };
 		5781A23E26FB9D5100D7CF6E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781A23D26FB9D5100D7CF6E /* StorageManager.swift */; };
+		578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */; };
 		57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055D26FA9F5200D4364A /* ChatViewController.swift */; };
 		57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */; };
 		57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC056126FA9F8400D4364A /* NewConversationViewController.swift */; };
@@ -52,6 +53,7 @@
 		5754A91D26F8DB7E004E8580 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5781A23D26FB9D5100D7CF6E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		57FC055D26FA9F5200D4364A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		57FC056126FA9F8400D4364A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 		5754A92826F8DFFF004E8580 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				578E45C82700E04200CF84F5 /* ChatCustomCells */,
 				5754A92C26F8E020004E8580 /* StoryBoards */,
 			);
 			path = Views;
@@ -176,6 +179,14 @@
 				5754A91A26F8DB7E004E8580 /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		578E45C82700E04200CF84F5 /* ChatCustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */,
+			);
+			path = ChatCustomCells;
 			sourceTree = "<group>";
 		};
 		57FC055C26FA9F0E00D4364A /* ChatViewController */ = {
@@ -372,6 +383,7 @@
 				57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */,
 				57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
+				578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
 				76AD3C6B26FA482E009DC073 /* GameSetupViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
