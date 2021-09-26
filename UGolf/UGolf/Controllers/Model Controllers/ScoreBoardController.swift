@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
-class ScoreBoardController {
-    let sharedInstance = ScoreBoardController()
-    
-    func parCalculator(par : Int, score : Int) {
-        guard let score = score,
-              let par = par else { return }
-        
-        
-    }
-}
+//
+//class ScoreBoardController {
+//    let sharedInstance = ScoreBoardController()
+//    
+//    func parCalculator(par : Int, score : Int) {
+//        guard let score = score,
+//              let par = par else { return }
+//        
+//        
+//    }
+//}
