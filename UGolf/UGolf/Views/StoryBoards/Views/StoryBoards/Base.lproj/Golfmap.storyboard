@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,8 +37,11 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-nH-NZN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="0Sv-fQ-KqR" id="OE4-V7-UFf"/>
+                                    <outletCollection property="gestureRecognizers" destination="2Ud-Ti-y29" appends="YES" id="bzf-9V-oMz"/>
+                                    <outletCollection property="gestureRecognizers" destination="PX2-Q0-XIl" appends="YES" id="p6l-gP-CzB"/>
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcj-my-VrH">
@@ -110,7 +114,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="y1u-kx-awB" secondAttribute="height" multiplier="1:1" id="mHY-kS-bJc"/>
                                                 </constraints>
-                                                <state key="normal" image="golf-course"/>
+                                                <state key="normal" image="poi-golfcourse"/>
                                                 <connections>
                                                     <action selector="didTapPoiButton:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="Bfl-Ll-Ozx"/>
                                                 </connections>
@@ -121,7 +125,7 @@
                                                     <constraint firstAttribute="width" secondItem="KxH-rs-xKo" secondAttribute="height" multiplier="1:1" id="0aq-n6-Mvr"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="map"/>
+                                                <state key="normal" image="poi-golfstores"/>
                                                 <connections>
                                                     <action selector="didTapPoiButton:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="L4Z-Wt-7x5"/>
                                                 </connections>
@@ -132,7 +136,7 @@
                                                     <constraint firstAttribute="width" secondItem="i2X-QC-bYH" secondAttribute="height" multiplier="1:1" id="gpu-ED-nux"/>
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" image="golf-restaurant"/>
+                                                <state key="normal" image="poi-restaurants"/>
                                                 <connections>
                                                     <action selector="didTapPoiButton:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="vyY-Bx-0Zx"/>
                                                 </connections>
@@ -192,6 +196,78 @@
                                     <constraint firstItem="2pD-dH-3U9" firstAttribute="leading" secondItem="cVS-Kw-94d" secondAttribute="leading" id="hfi-CL-N3e"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-MU-k7q">
+                                <rect key="frame" x="0.0" y="862" width="414" height="180"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11c-k2-srH" userLabel="close directions">
+                                        <rect key="frame" x="376" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="UYT-Pc-exe"/>
+                                            <constraint firstAttribute="width" constant="30" id="u9z-Me-mIc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapCloseSlideView:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="taK-aN-cOh"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqD-0M-U8N">
+                                        <rect key="frame" x="16" y="16" width="118" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bX-9S-GK1">
+                                        <rect key="frame" x="16" y="96.5" width="60" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p3-28-F7W">
+                                        <rect key="frame" x="16" y="70.5" width="81.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXx-7w-vOa">
+                                        <rect key="frame" x="16" y="44.5" width="56.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23g-W5-yQ8">
+                                        <rect key="frame" x="338" y="70.5" width="60" height="60"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Gef-HL-EAA"/>
+                                            <constraint firstAttribute="height" constant="60" id="lxG-6M-V9B"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="GO">
+                                            <color key="baseForegroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapGo:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="lF3-oM-VEV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="23g-W5-yQ8" firstAttribute="top" secondItem="4p3-28-F7W" secondAttribute="top" id="4nS-29-r9R"/>
+                                    <constraint firstItem="hqD-0M-U8N" firstAttribute="leading" secondItem="9E0-MU-k7q" secondAttribute="leading" constant="16" id="FwC-BY-j8g"/>
+                                    <constraint firstAttribute="trailing" secondItem="23g-W5-yQ8" secondAttribute="trailing" constant="16" id="Q8g-8M-wKU"/>
+                                    <constraint firstItem="4p3-28-F7W" firstAttribute="leading" secondItem="dXx-7w-vOa" secondAttribute="leading" id="UmO-7t-lQf"/>
+                                    <constraint firstItem="4p3-28-F7W" firstAttribute="top" secondItem="dXx-7w-vOa" secondAttribute="bottom" constant="8" id="Vnb-yB-KRV"/>
+                                    <constraint firstItem="dXx-7w-vOa" firstAttribute="top" secondItem="hqD-0M-U8N" secondAttribute="bottom" constant="2" id="bNG-GO-lTh"/>
+                                    <constraint firstItem="11c-k2-srH" firstAttribute="top" secondItem="9E0-MU-k7q" secondAttribute="top" constant="8" id="c7u-0c-rE4"/>
+                                    <constraint firstItem="hqD-0M-U8N" firstAttribute="top" secondItem="9E0-MU-k7q" secondAttribute="top" constant="16" id="dA6-c4-p5s"/>
+                                    <constraint firstItem="1bX-9S-GK1" firstAttribute="leading" secondItem="4p3-28-F7W" secondAttribute="leading" id="iFj-cu-nq7"/>
+                                    <constraint firstAttribute="trailing" secondItem="11c-k2-srH" secondAttribute="trailing" constant="8" id="ppa-Mf-Ex4"/>
+                                    <constraint firstItem="1bX-9S-GK1" firstAttribute="top" secondItem="4p3-28-F7W" secondAttribute="bottom" constant="2" id="qZi-p1-rOo"/>
+                                    <constraint firstItem="dXx-7w-vOa" firstAttribute="leading" secondItem="hqD-0M-U8N" secondAttribute="leading" id="xg0-GR-G8K"/>
+                                    <constraint firstAttribute="height" constant="180" id="zcm-I5-OqR"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kBw-G2-ooV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -201,6 +277,7 @@
                             <constraint firstItem="Jcj-my-VrH" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="top" constant="40" id="0ls-NW-EpP"/>
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="qyl-nH-NZN" secondAttribute="trailing" id="AjY-m3-Rin"/>
                             <constraint firstItem="qyl-nH-NZN" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="top" id="BhS-X6-sgm"/>
+                            <constraint firstItem="9E0-MU-k7q" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="HZZ-s9-A98"/>
                             <constraint firstItem="qyl-nH-NZN" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="MxW-VS-T2m"/>
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="qyl-nH-NZN" secondAttribute="trailing" id="Vs8-Q5-Lbt"/>
                             <constraint firstItem="cVS-Kw-94d" firstAttribute="top" secondItem="7Dc-3S-vnv" secondAttribute="bottom" id="bFt-67-zAC"/>
@@ -208,33 +285,55 @@
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="trailing" secondItem="Jcj-my-VrH" secondAttribute="trailing" constant="8" id="h2e-pt-dou"/>
                             <constraint firstItem="cVS-Kw-94d" firstAttribute="trailing" secondItem="kBw-G2-ooV" secondAttribute="trailing" id="h7U-8q-i2s"/>
                             <constraint firstItem="cVS-Kw-94d" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="iE9-wt-3tH"/>
+                            <constraint firstItem="9E0-MU-k7q" firstAttribute="top" secondItem="kBw-G2-ooV" secondAttribute="bottom" id="iWa-Ox-Aen"/>
                             <constraint firstItem="qyl-nH-NZN" firstAttribute="leading" secondItem="kBw-G2-ooV" secondAttribute="leading" id="lQB-bO-SYY"/>
+                            <constraint firstItem="9E0-MU-k7q" firstAttribute="trailing" secondItem="kBw-G2-ooV" secondAttribute="trailing" id="rw9-2H-ikX"/>
                             <constraint firstItem="kBw-G2-ooV" firstAttribute="bottom" secondItem="qyl-nH-NZN" secondAttribute="bottom" id="yea-4b-J6l"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your courses" id="8g8-1q-3p8"/>
                     <connections>
+                        <outlet property="addressLabel" destination="dXx-7w-vOa" id="0qP-xV-vHh"/>
                         <outlet property="controllView" destination="Jcj-my-VrH" id="DBb-Re-Pdn"/>
+                        <outlet property="destinationLabel" destination="hqD-0M-U8N" id="pWO-nj-bZA"/>
+                        <outlet property="directionView" destination="9E0-MU-k7q" id="8MX-S0-gpH"/>
+                        <outlet property="directionViewTopConstraint" destination="iWa-Ox-Aen" id="cPW-cZ-zdN"/>
+                        <outlet property="distanceLabel" destination="1bX-9S-GK1" id="o3p-1g-ce1"/>
+                        <outlet property="goButton" destination="23g-W5-yQ8" id="X90-cq-Pda"/>
                         <outlet property="mapView" destination="qyl-nH-NZN" id="xBe-XT-2Nc"/>
                         <outlet property="searchTextField" destination="BBP-xp-9Q6" id="s71-sQ-hAv"/>
                         <outlet property="searchView" destination="cVS-Kw-94d" id="WL4-lK-RGv"/>
                         <outlet property="searchViewTopConstrain" destination="bFt-67-zAC" id="3C6-pQ-hVI"/>
                         <outlet property="tableView" destination="2pD-dH-3U9" id="eg6-4i-Kzp"/>
+                        <outlet property="tripTimeLabel" destination="4p3-28-F7W" id="bhh-LM-w9K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBF-ug-Drx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="2Ud-Ti-y29">
+                    <connections>
+                        <action selector="didLongPressedGesture:" destination="0Sv-fQ-KqR" id="wuK-0J-OsN"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="PX2-Q0-XIl">
+                    <connections>
+                        <action selector="didTapGesture:" destination="0Sv-fQ-KqR" id="eaP-2f-xa3"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-4.3478260869565224" y="-173.4375"/>
         </scene>
     </scenes>
     <resources>
-        <image name="golf-course" width="512" height="512"/>
-        <image name="golf-restaurant" width="512" height="512"/>
         <image name="location" catalog="system" width="128" height="118"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="map" width="170.66667175292969" height="170.66667175292969"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="poi-golfcourse" width="512" height="512"/>
+        <image name="poi-golfstores" width="512" height="512"/>
+        <image name="poi-restaurants" width="512" height="512"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

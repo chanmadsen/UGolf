@@ -22,6 +22,21 @@ class POI: NSObject, MKAnnotation {
     let subtitle: String?
     let poiType: POIType
     
+    
+    // color fo the marker. 
+    var tintColor: UIColor {
+        switch poiType {
+        case .golfcourse:
+            return .green
+        case .golfstores:
+            return .darkGray
+        case .restaurants:
+            return .orange
+        case .pin:
+            return .black
+        }
+    }
+    
     init(title: String, address: String, coordinate: CLLocationCoordinate2D, poiType: POIType) {
         self.title = title
         self.subtitle = address
