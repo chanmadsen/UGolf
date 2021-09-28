@@ -23,6 +23,8 @@
 		57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055D26FA9F5200D4364A /* ChatViewController.swift */; };
 		57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */; };
 		57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC056126FA9F8400D4364A /* NewConversationViewController.swift */; };
+		5B59E4AA26FBF36A00B8642C /* POIAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59E4A926FBF36A00B8642C /* POIAnnotationView.swift */; };
+		5B59E4AE26FE351700B8642C /* POIMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */; };
 		5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA85926FA41FA00D2189A /* POI.swift */; };
 		5B5BA85D26FA49D500D2189A /* MKPlacemark+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA85C26FA49D500D2189A /* MKPlacemark+Extension.swift */; };
 		5B8E6D9326F8E8D200A37699 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8E6D9226F8E8D200A37699 /* Home.storyboard */; };
@@ -30,6 +32,7 @@
 		5B8EC05F26F8EE0400CE160D /* Golfmap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC05D26F8EE0400CE160D /* Golfmap.storyboard */; };
 		5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */; };
 		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
+		5BB6E9C2270220FF009D9D76 /* POIClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */; };
 		76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6226F8F083009DC073 /* ScoreBoard.swift */; };
 		76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */; };
 		76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */; };
@@ -57,6 +60,8 @@
 		57FC055D26FA9F5200D4364A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		57FC056126FA9F8400D4364A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		5B59E4A926FBF36A00B8642C /* POIAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAnnotationView.swift; sourceTree = "<group>"; };
+		5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIMarkerAnnotationView.swift; sourceTree = "<group>"; };
 		5B5BA85926FA41FA00D2189A /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
 		5B5BA85C26FA49D500D2189A /* MKPlacemark+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPlacemark+Extension.swift"; sourceTree = "<group>"; };
 		5B8E6D9226F8E8D200A37699 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		5B8EC05E26F8EE0400CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Golfmap.storyboard; sourceTree = "<group>"; };
 		5B8EC06126F8EE6C00CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Messaging.storyboard; sourceTree = "<group>"; };
 		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
+		5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIClusterAnnotationView.swift; sourceTree = "<group>"; };
 		76AD3C6226F8F083009DC073 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardController.swift; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 			children = (
 				76AD3C6226F8F083009DC073 /* ScoreBoard.swift */,
 				5B5BA85926FA41FA00D2189A /* POI.swift */,
+				5B59E4A926FBF36A00B8642C /* POIAnnotationView.swift */,
+				5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */,
+				5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -380,6 +389,9 @@
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */,
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
+				5B59E4AA26FBF36A00B8642C /* POIAnnotationView.swift in Sources */,
+				5BB6E9C2270220FF009D9D76 /* POIClusterAnnotationView.swift in Sources */,
+				5B59E4AE26FE351700B8642C /* POIMarkerAnnotationView.swift in Sources */,
 				57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */,
 				57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
