@@ -35,7 +35,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-nH-NZN">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qyl-nH-NZN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -199,18 +199,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E0-MU-k7q">
                                 <rect key="frame" x="0.0" y="862" width="414" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11c-k2-srH" userLabel="close directions">
-                                        <rect key="frame" x="376" y="8" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="UYT-Pc-exe"/>
-                                            <constraint firstAttribute="width" constant="30" id="u9z-Me-mIc"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
-                                        <connections>
-                                            <action selector="didTapCloseSlideView:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="taK-aN-cOh"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Destination" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqD-0M-U8N">
                                         <rect key="frame" x="16" y="16" width="118" height="26.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -239,7 +227,7 @@
                                         <rect key="frame" x="338" y="70.5" width="60" height="60"/>
                                         <color key="backgroundColor" name="AccentColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="Gef-HL-EAA"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Gef-HL-EAA"/>
                                             <constraint firstAttribute="height" constant="60" id="lxG-6M-V9B"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
@@ -248,6 +236,18 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="didTapGo:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="lF3-oM-VEV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spl-89-eqC">
+                                        <rect key="frame" x="382" y="8" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="0bC-mk-gNI"/>
+                                            <constraint firstAttribute="width" constant="24" id="ps3-ho-OAw"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="xmark" catalog="system"/>
+                                        <connections>
+                                            <action selector="didTapCloseSlideView:" destination="0Sv-fQ-KqR" eventType="touchUpInside" id="JTf-uV-2I4"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -259,11 +259,11 @@
                                     <constraint firstItem="4p3-28-F7W" firstAttribute="leading" secondItem="dXx-7w-vOa" secondAttribute="leading" id="UmO-7t-lQf"/>
                                     <constraint firstItem="4p3-28-F7W" firstAttribute="top" secondItem="dXx-7w-vOa" secondAttribute="bottom" constant="8" id="Vnb-yB-KRV"/>
                                     <constraint firstItem="dXx-7w-vOa" firstAttribute="top" secondItem="hqD-0M-U8N" secondAttribute="bottom" constant="2" id="bNG-GO-lTh"/>
-                                    <constraint firstItem="11c-k2-srH" firstAttribute="top" secondItem="9E0-MU-k7q" secondAttribute="top" constant="8" id="c7u-0c-rE4"/>
                                     <constraint firstItem="hqD-0M-U8N" firstAttribute="top" secondItem="9E0-MU-k7q" secondAttribute="top" constant="16" id="dA6-c4-p5s"/>
                                     <constraint firstItem="1bX-9S-GK1" firstAttribute="leading" secondItem="4p3-28-F7W" secondAttribute="leading" id="iFj-cu-nq7"/>
-                                    <constraint firstAttribute="trailing" secondItem="11c-k2-srH" secondAttribute="trailing" constant="8" id="ppa-Mf-Ex4"/>
+                                    <constraint firstAttribute="trailing" secondItem="spl-89-eqC" secondAttribute="trailing" constant="8" id="iHh-GO-imT"/>
                                     <constraint firstItem="1bX-9S-GK1" firstAttribute="top" secondItem="4p3-28-F7W" secondAttribute="bottom" constant="2" id="qZi-p1-rOo"/>
+                                    <constraint firstItem="spl-89-eqC" firstAttribute="top" secondItem="9E0-MU-k7q" secondAttribute="top" constant="8" id="wsr-kS-EBF"/>
                                     <constraint firstItem="dXx-7w-vOa" firstAttribute="leading" secondItem="hqD-0M-U8N" secondAttribute="leading" id="xg0-GR-G8K"/>
                                     <constraint firstAttribute="height" constant="180" id="zcm-I5-OqR"/>
                                 </constraints>
