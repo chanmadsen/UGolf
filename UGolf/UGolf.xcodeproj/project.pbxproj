@@ -33,10 +33,10 @@
 		5B8EC06226F8EE6C00CE160D /* Messaging.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8EC06026F8EE6C00CE160D /* Messaging.storyboard */; };
 		5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8EC06326F8F45800CE160D /* MapViewController.swift */; };
 		5BB6E9C2270220FF009D9D76 /* POIClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */; };
+		5BB6E9C42705168C009D9D76 /* NineHoleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB6E9C32705168B009D9D76 /* NineHoleTableViewController.swift */; };
 		76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6226F8F083009DC073 /* ScoreBoard.swift */; };
 		76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */; };
 		76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */; };
-		76AD3C6B26FA482E009DC073 /* GameSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */; };
 		C77B0D2D75955AA10FF298C2 /* Pods_UGolf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,10 +70,10 @@
 		5B8EC06126F8EE6C00CE160D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Views/StoryBoards/Base.lproj/Messaging.storyboard; sourceTree = "<group>"; };
 		5B8EC06326F8F45800CE160D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "UGolf/Controllers/View Controllers/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIClusterAnnotationView.swift; sourceTree = "<group>"; };
+		5BB6E9C32705168B009D9D76 /* NineHoleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NineHoleTableViewController.swift; sourceTree = "<group>"; };
 		76AD3C6226F8F083009DC073 /* ScoreBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoard.swift; sourceTree = "<group>"; };
 		76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardViewController.swift; sourceTree = "<group>"; };
 		76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBoardController.swift; sourceTree = "<group>"; };
-		76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupViewController.swift; sourceTree = "<group>"; };
 		A638CCB55B7135B93FDD28BF /* Pods-UGolf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.release.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.release.xcconfig"; sourceTree = "<group>"; };
 		CBE0070D60D03AA1963B0FC4 /* Pods-UGolf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UGolf.debug.xcconfig"; path = "Target Support Files/Pods-UGolf/Pods-UGolf.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,7 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
-				76AD3C6A26FA482E009DC073 /* GameSetupViewController.swift */,
+				5BB6E9C32705168B009D9D76 /* NineHoleTableViewController.swift */,
 			);
 			path = GameViewControllers;
 			sourceTree = "<group>";
@@ -387,6 +387,7 @@
 				76AD3C6326F8F083009DC073 /* ScoreBoard.swift in Sources */,
 				5B5BA85D26FA49D500D2189A /* MKPlacemark+Extension.swift in Sources */,
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
+				5BB6E9C42705168C009D9D76 /* NineHoleTableViewController.swift in Sources */,
 				76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */,
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
 				5B59E4AA26FBF36A00B8642C /* POIAnnotationView.swift in Sources */,
@@ -397,7 +398,6 @@
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
-				76AD3C6B26FA482E009DC073 /* GameSetupViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
 				5781A23E26FB9D5100D7CF6E /* StorageManager.swift in Sources */,
 			);
@@ -574,6 +574,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5YK8XAHMK;
 				INFOPLIST_FILE = UGolf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,6 +595,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D5YK8XAHMK;
 				INFOPLIST_FILE = UGolf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
