@@ -20,6 +20,9 @@
 		5754A92E26F8E19A004E8580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */; };
 		5781A23E26FB9D5100D7CF6E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781A23D26FB9D5100D7CF6E /* StorageManager.swift */; };
 		578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */; };
+		57D8668A270B725D00BFA79B /* PhotoViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D86689270B725D00BFA79B /* PhotoViewerViewController.swift */; };
+		57D8668C270BC34A00BFA79B /* NewConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8668B270BC34A00BFA79B /* NewConversationCell.swift */; };
+		57D8668E270BC39200BFA79B /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D8668D270BC39200BFA79B /* SearchResult.swift */; };
 		57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055D26FA9F5200D4364A /* ChatViewController.swift */; };
 		57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */; };
 		57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC056126FA9F8400D4364A /* NewConversationViewController.swift */; };
@@ -57,6 +60,9 @@
 		5754A92D26F8E19A004E8580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5781A23D26FB9D5100D7CF6E /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		57D86689270B725D00BFA79B /* PhotoViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerViewController.swift; sourceTree = "<group>"; };
+		57D8668B270BC34A00BFA79B /* NewConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationCell.swift; sourceTree = "<group>"; };
+		57D8668D270BC39200BFA79B /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		57FC055D26FA9F5200D4364A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		57FC056126FA9F8400D4364A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				578E45C92700E05F00CF84F5 /* ConversationTableViewCell.swift */,
+				57D8668B270BC34A00BFA79B /* NewConversationCell.swift */,
 			);
 			path = ChatCustomCells;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */,
 				57FC055D26FA9F5200D4364A /* ChatViewController.swift */,
 				57FC056126FA9F8400D4364A /* NewConversationViewController.swift */,
+				57D86689270B725D00BFA79B /* PhotoViewerViewController.swift */,
 			);
 			path = ChatViewController;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				76AD3C6726FA44F8009DC073 /* ScoreBoardController.swift */,
+				57D8668D270BC39200BFA79B /* SearchResult.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -381,6 +390,7 @@
 				5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */,
 				5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */,
 				5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */,
+				57D8668A270B725D00BFA79B /* PhotoViewerViewController.swift in Sources */,
 				57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */,
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
 				5754A91026F8DB7C004E8580 /* AppDelegate.swift in Sources */,
@@ -389,11 +399,13 @@
 				5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */,
 				5BB6E9C42705168C009D9D76 /* NineHoleTableViewController.swift in Sources */,
 				76AD3C6826FA44F8009DC073 /* ScoreBoardController.swift in Sources */,
+				57D8668E270BC39200BFA79B /* SearchResult.swift in Sources */,
 				76AD3C6526F8F536009DC073 /* ScoreBoardViewController.swift in Sources */,
 				5B59E4AA26FBF36A00B8642C /* POIAnnotationView.swift in Sources */,
 				5BB6E9C2270220FF009D9D76 /* POIClusterAnnotationView.swift in Sources */,
 				5B59E4AE26FE351700B8642C /* POIMarkerAnnotationView.swift in Sources */,
 				57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */,
+				57D8668C270BC34A00BFA79B /* NewConversationCell.swift in Sources */,
 				57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */,
 				5748DB8326F8F2B000DCA26C /* DataBaseManager.swift in Sources */,
 				578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */,
@@ -572,7 +584,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5YK8XAHMK;
+				DEVELOPMENT_TEAM = SB3Q7W7XN7;
 				INFOPLIST_FILE = UGolf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -593,7 +605,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D5YK8XAHMK;
+				DEVELOPMENT_TEAM = SB3Q7W7XN7;
 				INFOPLIST_FILE = UGolf/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
