@@ -8,21 +8,76 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import SDWebImage
 
 
 class HomeViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    let data = ["Log Out"]
+    var data = [ProfileViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(ProfileTableViewCell.self, forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        
+        data.append(ProfileViewModel(viewModelType: .info,
+                                     title: "Name:    \(UserDefaults.standard.value(forKey: "name") as? String ?? "No name")",
+                                     handler: nil))
+        data.append(ProfileViewModel(viewModelType: .scores,
+                                     title: "Scores",
+                                     handler: nil))
+        data.append(ProfileViewModel(viewModelType: .otherUsers,
+                                     title: "Friends",
+                                     handler: nil))
+        data.append(ProfileViewModel(viewModelType: .otherUsers,
+                                     title: "Friend Requests",
+                                     handler: nil))
+        data.append(ProfileViewModel(viewModelType: .otherUsers,
+                                     title: "Blocked Users",
+                                     handler: nil))
+        
+        data.append(ProfileViewModel(viewModelType: .logout, title: "Log Out", handler: {[weak self] in
+            
+            guard let strongSelf = self else { return }
+            
+            let actionSheet = UIAlertController(title: nil,
+                                                message: nil,
+                                                preferredStyle: .actionSheet)
+            
+            actionSheet.addAction(UIAlertAction(title: "Log Out",
+                                                style: .destructive,
+                                                handler: {[weak self] _ in
+                
+                guard let strongSelf = self else { return }
+                
+                //Log out facebook
+                FBSDKLoginKit.LoginManager().logOut()
+                
+                
+                do {
+                    try FirebaseAuth.Auth.auth().signOut()
+                    
+                    let vc = LoginViewController()
+                    let nav = UINavigationController(rootViewController: vc)
+                    nav.modalPresentationStyle = .fullScreen
+                    strongSelf.present(nav, animated: true)
+                    
+                } catch {
+                    print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
+                }
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            strongSelf.present(actionSheet, animated: true)
+        }))
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableHeaderView = createTableHeader()
-        
+       
     }
     
     func createTableHeader() -> UIView? {
@@ -38,25 +93,25 @@ class HomeViewController: UIViewController {
                                               width: self.view.width,
                                               height: 300))
         
-        headerView.backgroundColor = .link
+        headerView.backgroundColor = #colorLiteral(red: 0.372451365, green: 0.6588525772, blue: 0.2430736125, alpha: 1)
         
-        let imageView = UIImageView(frame: CGRect(x: (headerView.width-150) / 2,
-                                                  y: 75,
-                                                  width: 150,
-                                                  height: 150))
+        let imageView = UIImageView(frame: CGRect(x: (headerView.width-200) / 2,
+                                                  y: 50,
+                                                  width: 200,
+                                                  height: 200))
         
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .white
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 3
         imageView.layer.masksToBounds = true
-        imageView.layer.cornerRadius = imageView.width/2
+        imageView.layer.cornerRadius = 30
         headerView.addSubview(imageView)
         
-        StorageManager.shared.downloadURL(for: path, completion: { [weak self] result in
+        StorageManager.shared.downloadURL(for: path, completion: { result in
             switch result {
             case .success(let url):
-                self?.downloadImage(imageView: imageView, url: url)
+                imageView.sd_setImage(with: url, completed: nil)
             case .failure(let error):
                 print("Failed to get download url: \(error)")
             }
@@ -64,16 +119,6 @@ class HomeViewController: UIViewController {
         return headerView
     }
     
-    func downloadImage(imageView: UIImageView, url: URL) {
-        URLSession.shared.dataTask(with: url, completionHandler: { data, _, error in
-            guard let data = data, error == nil else { return }
-            
-            DispatchQueue.main.async {
-                let image = UIImage(data: data)
-                imageView.image = image
-            }
-        }).resume()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -97,49 +142,48 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
+        let viewModel = data[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as! ProfileTableViewCell
         
-        cell.textLabel?.textAlignment = .center
-        cell.textLabel?.textColor = .red
-        
+        cell.setUp(with: viewModel)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        data[indexPath.row].handler?()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+}
+
+class ProfileTableViewCell: UITableViewCell {
+    
+    static let identifier = "ProfileTableViewCell"
+    
+    public func setUp(with viewModel: ProfileViewModel) {
         
-        let actionSheet = UIAlertController(title: nil,
-                                            message: nil,
-                                            preferredStyle: .actionSheet)
+        self.textLabel?.text = viewModel.title
         
-        actionSheet.addAction(UIAlertAction(title: "Log Out",
-                                            style: .destructive,
-                                            handler: {[weak self] _ in
-            
-            guard let strongSelf = self else { return }
-            
-            //Log out facebook
-            FBSDKLoginKit.LoginManager().logOut()
-            
-            
-            do {
-                try FirebaseAuth.Auth.auth().signOut()
-                
-                let vc = LoginViewController()
-                let nav = UINavigationController(rootViewController: vc)
-                nav.modalPresentationStyle = .fullScreen
-                strongSelf.present(nav, animated: true)
-                
-            } catch {
-                print("Error in \(#function) : \(error.localizedDescription) \n---\n \(error)")
-            }
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
-        present(actionSheet, animated: true)
-        
-        
+        switch viewModel.viewModelType {
+        case .info:
+            self.textLabel?.textAlignment = .left
+            self.selectionStyle = .none
+            self.textLabel?.font = .systemFont(ofSize: 28, weight: .bold)
+            self.backgroundColor = #colorLiteral(red: 0.5842152834, green: 0.82356745, blue: 0.4195292592, alpha: 1)
+        case .scores:
+            self.textLabel?.font = .systemFont(ofSize: 24, weight: .bold)
+            self.textLabel?.textAlignment = .center
+            self.backgroundColor = #colorLiteral(red: 0.3723332927, green: 0.6577198776, blue: 0.2432143563, alpha: 1)
+        case .otherUsers:
+            self.textLabel?.textAlignment = .center
+            self.textLabel?.font = .systemFont(ofSize: 21, weight: .semibold)
+        case .logout:
+            self.textLabel?.textColor = .red
+            self.textLabel?.textAlignment = .center
+            self.textLabel?.font = .systemFont(ofSize: 21, weight: .semibold)
+        }
     }
 }
