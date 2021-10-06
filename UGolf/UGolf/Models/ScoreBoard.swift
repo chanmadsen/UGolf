@@ -6,27 +6,31 @@
 //
 
 import Foundation
+import CoreLocation
 
-class ScoreBoard {
-    var nineHoleGame : [Int]?
-    var eighteenHoleGame: [Int]?
+class ScoreBoard: Codable {
     let score : Int
-    let isNineHoleGame : Bool
-    var par : Int
+    let location : String
+    let timestamp : Date
+    let uuid: String
+
     
-    init(nineHoleGame : [Int]?, eighteenHoleGame : [Int]?, score : Int, isNineHoleGame : Bool, par : Int) {
-        self.nineHoleGame = nineHoleGame
-        self.eighteenHoleGame = eighteenHoleGame
+    init(score : Int, location: String , timestamp: Date = Date(), uuid: String = UUID().uuidString) {
         self.score = score
-        self.isNineHoleGame = isNineHoleGame
-        self.par = par
+        self.location = location
+        self.timestamp = timestamp
+        self.uuid = uuid
+
     }
 }
 
-struct ScoreBoardHolder {
+extension ScoreBoard: Equatable {
+    static func == (lhs: ScoreBoard, rhs: ScoreBoard) -> Bool {
+        return  lhs.uuid == rhs.uuid
+    }
     
-    let finishedGameScoreBoard : [ScoreBoard]
     
 }
+
 
 
