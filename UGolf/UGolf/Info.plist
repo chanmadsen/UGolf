@@ -55,6 +55,8 @@
 	<string>Please allow access to select a profile picture from photo library</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Please allow access to microphone to take videos</string>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<string>NO</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

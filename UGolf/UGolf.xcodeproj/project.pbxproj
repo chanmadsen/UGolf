@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5740F117270D1FA500E9CE2C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F116270D1FA500E9CE2C /* ProfileViewModel.swift */; };
+		5740F11A270E1B8E00E9CE2C /* ChatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F119270E1B8E00E9CE2C /* ChatModels.swift */; };
+		5740F11C270E1BF500E9CE2C /* ConversationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5740F11B270E1BF500E9CE2C /* ConversationsModel.swift */; };
 		5748DB7D26F8E5BD00DCA26C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */; };
 		5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */; };
 		5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5748DB8026F8F28B00DCA26C /* Extensions.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		49AA85B241BF515AF11E63FF /* Pods_UGolf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UGolf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5740F116270D1FA500E9CE2C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5740F119270E1B8E00E9CE2C /* ChatModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModels.swift; sourceTree = "<group>"; };
+		5740F11B270E1BF500E9CE2C /* ConversationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsModel.swift; sourceTree = "<group>"; };
 		5748DB7C26F8E5BD00DCA26C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5748DB7E26F8E5D100DCA26C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5748DB8026F8F28B00DCA26C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -234,6 +238,8 @@
 				5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */,
 				5BB6E9C1270220FF009D9D76 /* POIClusterAnnotationView.swift */,
 				5740F116270D1FA500E9CE2C /* ProfileViewModel.swift */,
+				5740F119270E1B8E00E9CE2C /* ChatModels.swift */,
+				5740F11B270E1BF500E9CE2C /* ConversationsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +402,8 @@
 				5B8EC06426F8F45800CE160D /* MapViewController.swift in Sources */,
 				5748DB8126F8F28B00DCA26C /* Extensions.swift in Sources */,
 				5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */,
+				5740F11A270E1B8E00E9CE2C /* ChatModels.swift in Sources */,
+				5740F11C270E1BF500E9CE2C /* ConversationsModel.swift in Sources */,
 				57D8668A270B725D00BFA79B /* PhotoViewerViewController.swift in Sources */,
 				57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */,
 				5748DB7F26F8E5D100DCA26C /* RegisterViewController.swift in Sources */,
