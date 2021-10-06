@@ -17,12 +17,24 @@ class MapViewController: UIViewController {
     @IBOutlet weak var searchViewTopConstrain: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var directionView: UIView!
+    @IBOutlet weak var destinationLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var tripTimeLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var goButton: UIButton!
+    @IBOutlet weak var directionViewTopConstraint: NSLayoutConstraint!
     
     //MARK: - Properties
     private let locationManager = CLLocationManager()
     private var poiType: POIType?
     private var pois = [POI]()
     private var mapCenterLocation: CLLocation?
+    private var previousPinLocation: CLLocation?
+    private var routes = [MKRoute]()
+    private var routeIndex = 0
+    private var selectedAnnotation: MKAnnotationView?
+    private var mapHasRoute = false
     
     // Search Completion properties
     private var searchCompleter = MKLocalSearchCompleter()
@@ -44,12 +56,20 @@ class MapViewController: UIViewController {
         
         // currentLocation when app is first open.
         mapCenterLocation = CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude)
+        registerAnnotationView()
         
         //View
         costumeViewLayouts()
         
         
         
+    }
+    //MARK: - UI
+    private func costumeViewLayouts() {
+        controllView.layer.cornerRadius = 10.0
+        searchView.layer.cornerRadius = 20.0
+        directionView.layer.cornerRadius = 20.0
+        goButton.layer.cornerRadius = 8.0
     }
     //MARK: - Actions
     @IBAction func didTapUserLocation(_ sender: UIButton) {
@@ -60,9 +80,14 @@ class MapViewController: UIViewController {
     @IBAction func didTapSearchButton(_ sender: UIButton) {
         self.poiType = nil
         searchView(shown: true)
+        directionView(shown: false)
     }
     @IBAction func didTapCloseSlideView(_ sender: UIButton) {
         closeSlideView()
+        
+        if sender.tag == 1 {
+            clearMapView()
+        }
     }
     @IBAction func didTapPoiButton(_ sender: UIButton) {
         completerSearch = false
@@ -81,6 +106,92 @@ class MapViewController: UIViewController {
         searchPOI()
     }
     
+    // Use Reverce GEOcode to get address from a pin.
+    @IBAction func didLongPressedGesture(_ sender: UILongPressGestureRecognizer) {
+        // First, get location of tap point
+        let point = sender.location(in: mapView)
+        
+        // Second, turn it into a coordinate.
+        let coordinate = mapView.convert(point, toCoordinateFrom: mapView)
+        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        
+        // Third, prevent multiple pins for tapped location.
+        if previousPinLocation == nil || previousPinLocation!.distance(from: location) > 10 {
+            previousPinLocation = location
+            
+            // Reverse GEOCODE to get address of locationb
+            CLGeocoder().reverseGeocodeLocation(location) { [weak self] placemark, error in
+                if error != nil {
+                    return
+                }
+                
+                if let clPlacemark = placemark?.first {
+                    // create mkplacemark
+                    let placemark = MKPlacemark(placemark: clPlacemark)
+                    
+                    // get address now.
+                    if let address = placemark.formattedAddress {
+                        let poi = POI(title: "Pinned Location", address: address, coordinate: coordinate, poiType: .pin)
+                        
+                        // drop pin into map view
+                        self?.mapView.addAnnotation(poi)
+                        
+                    }
+                }
+            }
+        }
+    }
+    @IBAction func didTapGesture(_ sender: UITapGestureRecognizer) {
+        closeSlideView()
+        
+        let touchPoint = sender.location(in: mapView)
+        let touchCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+        let mapPoint = MKMapPoint(touchCoordinate)
+        
+        // store the route object
+        var myRoutes = [MKRoute]()
+        var routeIndex = 0
+        
+        // mapoverLay
+        for overlay in mapView.overlays {
+            if overlay is MKPolyline, let polylineRenderer = mapView.renderer(for: overlay) as? MKPolylineRenderer {
+                // get point of touch
+                let polylinePoint = polylineRenderer.point(for: mapPoint)
+                
+                // check if the point is within route,
+                if polylineRenderer.path.contains(polylinePoint) {
+                    if let title = overlay.title, let indexString = title, let index = Int(indexString) {
+                        routeIndex = index
+                        myRoutes.append(routes[routeIndex])
+                        break // only capture new primary route.
+                    }
+                }
+            }
+        }
+        
+        // remaining routes
+        if !myRoutes.isEmpty {
+            for (index, route) in routes.enumerated() {
+                if index != routeIndex { // not equal to primary route index
+                    myRoutes.append(route)
+                }
+            }
+            routes = myRoutes
+            renderRoutes()
+        }
+    }
+    
+    @IBAction func didTapGo(_ sender: UIButton) {
+        // Navigate to Apple maps
+        guard let poi = selectedAnnotation?.annotation as? POI else { return }
+        
+        let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+        let placemark = MKPlacemark(coordinate: poi.coordinate)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.openInMaps(launchOptions: launchOptions)
+        
+    
+    }
     @IBAction func textFieldEditingChange(_ sender: UITextField) {
         // capture text and pass it into search completer.
         poiType = .pin
@@ -105,6 +216,7 @@ class MapViewController: UIViewController {
     private func closeSlideView() {
         clearSearchTextField()
         searchView(shown: false)
+        directionView(shown: false)
     }
     
     private func clearSearchTextField() {
@@ -122,9 +234,13 @@ class MapViewController: UIViewController {
         }
     }
     
-    private func costumeViewLayouts() {
-        controllView.layer.cornerRadius = 10.0
-        searchView.layer.cornerRadius = 20.0
+    private func directionView(shown: Bool) {
+        UIView.animate(withDuration: 0.3) { [weak self] in
+            guard let strongSelf = self else { return }
+            
+            strongSelf.directionViewTopConstraint.constant = shown ? -150 : 100
+            strongSelf.view.layoutIfNeeded()
+        }
     }
     
     private func centerToUserLocation() {
@@ -146,6 +262,96 @@ class MapViewController: UIViewController {
         alertController.addAction(settingsAction)
         
         present(alertController, animated: true)
+    }
+    
+    
+    // registering the class.
+    private func registerAnnotationView() {
+        //mapView.register(POIAnnotaionView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        
+        // for costume annotation.
+        mapView.register(POIMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        
+        // for costume cluster.
+        mapView.register(POIClusterAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+    }
+    
+    private func showDirection(to poi: POI) {
+        clearMapView()
+        routes.removeAll()
+        
+        selectedAnnotation?.annotation = poi
+        
+        // populate lable as well as direction request.
+        if let destinationTitle = poi.title {
+            destinationLabel.text = "To \(destinationTitle)"
+            addressLabel.text = poi.subtitle
+        }
+        
+        // creating request for directions.
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: mapView.userLocation.coordinate)) // start of route.
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: poi.coordinate))
+        request.requestsAlternateRoutes = true
+        request.transportType = .automobile
+        
+        // set directions.
+        let directions = MKDirections(request: request)
+        directions.calculate { [weak self] response, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            guard let response = response else { return }
+            self?.routes = response.routes // get routes.
+            // call renderRoutes
+            self?.renderRoutes()
+        }
+    }
+    
+    // render routes we have
+    private func renderRoutes() {
+        var primaryRoute = MKRoute()
+    
+        for route in routes {
+            if routeIndex == 0 {
+                primaryRoute = route
+            } else {
+                mapView.addOverlay(route.polyline, level: .aboveRoads)
+            }
+            routeIndex += 1
+        }
+        mapHasRoute = true
+        routeIndex = 0
+        mapView.addOverlay(primaryRoute.polyline, level: .aboveRoads)
+        mapView.setVisibleMapRect(primaryRoute.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 80, left: 80, bottom: 200, right: 80), animated: true)
+        
+        tripTimeLabel.text = "\(Int(primaryRoute.expectedTravelTime/60)) min"
+        distanceLabel.text = distanceStringByLocale(distance: primaryRoute.distance)
+        
+        if let poi = selectedAnnotation?.annotation {
+            mapView.addAnnotation(poi)
+        }
+        
+        directionView(shown: true)
+    }
+    
+    private func distanceStringByLocale(distance: Double) -> String {
+        if let locale = Locale.current.regionCode, locale.caseInsensitiveCompare("US") == .orderedSame {
+            return String(format: "%.1f mi", distance/1609.344)
+        }
+        // if not in the usa
+        if distance / 1000 < 1 {
+            return "\(distance) m"
+        }
+        
+        return "\(Int(distance/1000)) km"
+    }
+    
+    private func clearMapView() {
+        mapHasRoute = false
+        mapView.removeOverlays(mapView.overlays)
+        mapView.removeAnnotations(mapView.annotations)
+        mapView.deselectAnnotation(selectedAnnotation?.annotation, animated: true)
     }
     //MARK: - Search Funcs
     
@@ -182,16 +388,18 @@ class MapViewController: UIViewController {
     private func updateSearchResult(with mapItems: [MKMapItem]) {
         pois.removeAll()
         
+        mapView.removeAnnotations(mapView.annotations)
+        
         for mapItem in mapItems {
             if let name = mapItem.name, let address = mapItem.placemark.formattedAddress, let poiType = poiType {
                 let poi = POI(title: name, address: address, coordinate: mapItem.placemark.coordinate, poiType: poiType)
+                
+                // add annotation
+                //addAnnotation(for: poi)
                 pois.append(poi)
             }
         }
-        
-        mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(pois)
-        
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
         }
@@ -287,7 +495,6 @@ extension MapViewController: CLLocationManagerDelegate {
             break
             
         }
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -332,7 +539,8 @@ extension MapViewController: CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        if let poiType = poiType, poiType != .pin { // will only update if its a POI not a pin(Search)
+        
+        if let poiType = poiType, poiType != .pin && !mapHasRoute { // will only update if its a POI not a pin(Search)
             let newCenterLocation = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
             
             if let previousMapCenterLocation = mapCenterLocation {
@@ -344,6 +552,31 @@ extension MapViewController: MKMapViewDelegate {
                 }
             }
         }
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        guard let poi = view.annotation as? POI else { return }
+        
+        // request direction of this POI
+        showDirection(to: poi)
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        var renderer = MKPolylineRenderer()
+        
+        if let polyline = overlay as? MKPolyline {
+            polyline.title = "\(routeIndex)"
+            let routeColor = routeIndex == 0 ? UIColor(red: 66/255, green: 167/255, blue: 244/255, alpha: 1.0) : UIColor(red: 163/255, green: 212/255, blue: 247/255, alpha: 0.7)
+            
+            renderer = MKPolylineRenderer(polyline: polyline)
+            renderer.strokeColor = routeColor
+        }
+        return renderer
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        selectedAnnotation = view
     }
 }
 

@@ -9,15 +9,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Chat-->
         <scene sceneID="n91-hu-9FU">
             <objects>
                 <navigationController id="9JS-oC-Hyy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Wev-GX-0fA"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="arrow.up.message" catalog="system" id="Wev-GX-0fA"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="IBY-rq-Pgg">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="x7z-C8-LrR">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="mwD-Hz-MD6" kind="relationship" relationship="rootViewController" id="egt-dT-Hpw"/>
                     </connections>
@@ -44,6 +48,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.up.message" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

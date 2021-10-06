@@ -20,6 +20,8 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIApplicationSceneManifest</key>
@@ -51,6 +53,8 @@
 	<string>Please allow access to take profile photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Please allow access to select a profile picture from photo library</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Please allow access to microphone to take videos</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
