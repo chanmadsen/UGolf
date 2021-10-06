@@ -27,6 +27,7 @@
 		57FC055E26FA9F5200D4364A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055D26FA9F5200D4364A /* ChatViewController.swift */; };
 		57FC056026FA9F6A00D4364A /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */; };
 		57FC056226FA9F8400D4364A /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FC056126FA9F8400D4364A /* NewConversationViewController.swift */; };
+		5B482CA1270B6D020081EB25 /* EighteenHoleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B482CA0270B6D020081EB25 /* EighteenHoleTableViewController.swift */; };
 		5B59E4AA26FBF36A00B8642C /* POIAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59E4A926FBF36A00B8642C /* POIAnnotationView.swift */; };
 		5B59E4AE26FE351700B8642C /* POIMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */; };
 		5B5BA85A26FA41FA00D2189A /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5BA85926FA41FA00D2189A /* POI.swift */; };
@@ -68,6 +69,7 @@
 		57FC055D26FA9F5200D4364A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		57FC055F26FA9F6A00D4364A /* ConversationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsViewController.swift; sourceTree = "<group>"; };
 		57FC056126FA9F8400D4364A /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
+		5B482CA0270B6D020081EB25 /* EighteenHoleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EighteenHoleTableViewController.swift; sourceTree = "<group>"; };
 		5B59E4A926FBF36A00B8642C /* POIAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAnnotationView.swift; sourceTree = "<group>"; };
 		5B59E4AD26FE351700B8642C /* POIMarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIMarkerAnnotationView.swift; sourceTree = "<group>"; };
 		5B5BA85926FA41FA00D2189A /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 			children = (
 				76AD3C6426F8F536009DC073 /* ScoreBoardViewController.swift */,
 				5BB6E9C32705168B009D9D76 /* NineHoleTableViewController.swift */,
+				5B482CA0270B6D020081EB25 /* EighteenHoleTableViewController.swift */,
 			);
 			path = GameViewControllers;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				578E45CA2700E05F00CF84F5 /* ConversationTableViewCell.swift in Sources */,
 				5748DB8526F8F3CC00DCA26C /* HomeViewController.swift in Sources */,
 				5754A91226F8DB7C004E8580 /* SceneDelegate.swift in Sources */,
+				5B482CA1270B6D020081EB25 /* EighteenHoleTableViewController.swift in Sources */,
 				5781A23E26FB9D5100D7CF6E /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SB3Q7W7XN7;
 				INFOPLIST_FILE = UGolf/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -611,7 +615,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SB3Q7W7XN7;
 				INFOPLIST_FILE = UGolf/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

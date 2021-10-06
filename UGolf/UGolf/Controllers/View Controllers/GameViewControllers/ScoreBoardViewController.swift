@@ -13,6 +13,5 @@ class ScoreBoardViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
 }
 
